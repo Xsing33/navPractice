@@ -15,7 +15,7 @@ a {
 }
 
 body {
-  height: 200vh;
+  height: 300vh;
   background-image: url("http://stradbrokeadvisors.com/wp-content/uploads/2019/09/agreement-3546008_1280-880x660.jpg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -24,7 +24,8 @@ body {
 /*  Header and Nav */
 header {
   height: 100px;
-  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
   padding: 10px 0;
   position: sticky;
   top: 00px;
@@ -35,31 +36,43 @@ nav ul {
   padding-top: 60px;
   display: flex;
   justify-content: flex-end;
+  width: 100%;
 }
 
 nav a {
-  padding: 0 5px;
+  padding: 0 100px;
+  width: 100%;
   color: orange;
   cursor: pointer;
-}
-.active {
-  color: red;
+  position: relative;
 }
 
-nav a::after {
+.nav-scrolled {
+  background-color: rgba(0, 0, 0, 0.432);
+  border-radius: 1px;
+}
+
+/* a:hover {
+  border-bottom: 2px solid red;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 300ms ease-in;
+} */
+
+a::before {
   content: "";
   position: absolute;
-  left: 0;
   bottom: 0;
-  width: 100%;
+  left: 60px;
+  width: 50%;
   height: 2px;
   background: orange;
   transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 300ms ease-in;
+  transform-origin: left;
+  transition: transform 350ms ease-in;
 }
 
-a:hover::after {
+a:hover::before {
   transform: Scalex(1);
-  transform-origin: center;
+  transform-origin: right;
 }
